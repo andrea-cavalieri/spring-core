@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="adv.springfxintro.p02_dependencyinjection.a_property.Foo">
+		<property name="bar" ref="bar" />
+	</bean>
+
+	<bean id="bar" class="adv.springfxintro.p02_dependencyinjection.Bar">
+		<property name="potenza" value="2000" />
+	</bean>
+
+	<!-- La configurazione sopra equivale al seguente codice Java: Foo x = new 
+		Foo(); Bar bar = new Bar(); x.setBar(bar); -->
+
+</beans>

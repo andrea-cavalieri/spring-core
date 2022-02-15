@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="adv.springfxintro.p09_factorybeans.a_staticmethod.ToyotaCarFactory"
+          factory-method="assemble">
+        <constructor-arg value="Celica GT-Four ST205"/>
+    </bean>
+
+    <bean class="adv.springfxintro.p09_factorybeans.a_staticmethod.ToyotaCarFactory"
+          factory-method="assemble">
+        <constructor-arg value="Prius Plus+"/>
+    </bean>
+
+    <!--
+
+    NOTE:
+    1. Quando è presente l'attributo factory-method e questo specifica un metodo static,
+       allora l'attributo class non specifica il tipo del bean da creare, ma la classe
+       (factory) in cui è definito quel metodo.
+    2. Eventuali argomenti da passare al factory method vanno specificati tramite
+       constructor-arg.
+
+    -->
+
+</beans>

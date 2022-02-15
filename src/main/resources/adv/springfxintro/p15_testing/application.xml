@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <bean class="adv.springfxintro.p01_firstapp.c_decoupling.ShipmentServiceImpl">
+        <property name="customerService" ref="customerService"/>
+    </bean>
+
+    <beans profile="production">
+
+        <bean id="customerService" class="adv.springfxintro.p01_firstapp.c_decoupling.CustomerServiceImpl"/>
+
+    </beans>
+
+    <beans profile="test">
+
+        <bean id="customerService" class="org.mockito.Mockito" factory-method="mock">
+            <constructor-arg value="adv.springfxintro.p01_firstapp.c_decoupling.CustomerService"/>
+        </bean>
+
+        <!--
+
+        NOTA: La configurazione sopra equivale al codice Java:
+
+        CustomerService customerService = org.mockito.Mockito.mock(CustomerService.class);
+
+        -->
+
+    </beans>
+
+</beans>

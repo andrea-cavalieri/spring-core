@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="toyotaFactory" class="adv.springfxintro.p09_factorybeans.c_interface.CarFactory">
+        <property name="brand" value="Toyota"/>
+        <property name="models">
+            <list>
+                <value>Celica GT-Four ST205</value>
+                <value>Prius Plus+</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="john" class="adv.springfxintro.p09_factorybeans.c_interface.Customer">
+        <property name="name" value="John"/>
+        <property name="car" ref="toyotaFactory"/>
+    </bean>
+
+    <bean id="jack" class="adv.springfxintro.p09_factorybeans.c_interface.Customer">
+        <property name="name" value="Jack"/>
+        <property name="car" ref="toyotaFactory"/>
+    </bean>
+
+    <bean id="sam" class="adv.springfxintro.p09_factorybeans.c_interface.Customer">
+        <property name="name" value="Sam"/>
+        <property name="car" ref="toyotaFactory"/>
+    </bean>
+
+    <bean id="andrew" class="adv.springfxintro.p09_factorybeans.c_interface.Customer">
+        <property name="name" value="Andrew"/>
+        <property name="car" ref="toyotaFactory"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="adv.springfxintro.p02_dependencyinjection.b_constructor.Foo">
+        <constructor-arg ref="bar"/>
+    </bean>
+
+    <bean id="bar" class="adv.springfxintro.p02_dependencyinjection.Bar"/>
+
+    <!--
+
+    La configurazione sopra equivale al seguente codice Java:
+
+    Bar bar = new Bar();
+    Foo x = new Foo(bar);
+
+    -->
+
+</beans>

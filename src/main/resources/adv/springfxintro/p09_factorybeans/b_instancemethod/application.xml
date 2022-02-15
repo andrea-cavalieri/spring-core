@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="carFactory" class="adv.springfxintro.p09_factorybeans.b_instancemethod.CarFactory">
+        <property name="brand" value="Toyota"/>
+    </bean>
+
+    <bean factory-bean="carFactory"
+          factory-method="assemble">
+        <constructor-arg value="Celica GT-Four ST205"/>
+    </bean>
+
+    <bean factory-bean="carFactory"
+          factory-method="assemble">
+        <constructor-arg value="Prius Plus+"/>
+    </bean>
+
+    <!--
+
+    NOTA: Quando si utilizzano assieme gli attributi factory-bean e factory-method
+          non è necessario specificare l'attributo class del bean. Infatti il tipo
+          è evidente dall'oggetto restituito dal factory method.
+
+    -->
+
+</beans>

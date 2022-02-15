@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="john" class="adv.springfxintro.p05_multipleinstances.Person">
+        <property name="name" value="John"/>
+    </bean>
+
+    <bean id="jane" class="adv.springfxintro.p05_multipleinstances.Person">
+        <property name="name" value="Jane"/>
+    </bean>
+
+    <bean id="andrew" class="adv.springfxintro.p05_multipleinstances.Person">
+        <property name="name" value="Andrew"/>
+        <property name="father" ref="john"/>
+        <property name="mother" ref="jane"/>
+    </bean>
+
+</beans>

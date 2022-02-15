@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <bean id="beanAlwaysCreated" class="adv.springfxintro.p13_profiles.SomeBean"/>
+
+    <beans profile="default">
+
+        <bean id="beanCreatedIfDefaultProfile" class="adv.springfxintro.p13_profiles.SomeBean"/>
+
+    </beans>
+
+    <beans profile="cryptography-enabled">
+
+        <bean id="beanCreatedIfCryptographyEnabled" class="adv.springfxintro.p13_profiles.SomeBean"/>
+
+    </beans>
+
+    <beans profile="debugging-enabled">
+
+        <bean id="beanCreatedIfDebuggingEnabled" class="adv.springfxintro.p13_profiles.SomeBean"/>
+
+    </beans>
+
+    <beans profile="test">
+
+        <bean id="beanCreatedIfTestProfile" class="adv.springfxintro.p13_profiles.SomeBean"/>
+
+    </beans>
+
+    <beans profile="production">
+
+        <bean id="beanCreatedIfProductionProfile" class="adv.springfxintro.p13_profiles.SomeBean"/>
+
+    </beans>
+
+</beans>

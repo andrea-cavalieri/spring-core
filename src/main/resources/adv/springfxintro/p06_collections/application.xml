@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="adv.springfxintro.p06_collections.ComplexObject">
+        <property name="someList">
+            <list>
+                <value>a list element</value>
+                <value>12345</value>
+                <ref bean="anotherObject"/>
+            </list>
+        </property>
+
+        <property name="someSet">
+            <set>
+                <value>a set element</value>
+                <value>12345</value>
+                <ref bean="anotherObject"/>
+            </set>
+        </property>
+
+        <property name="someMap">
+            <map>
+                <entry key="a key string" value="a value string"/>
+                <entry>
+                    <key>
+                        <value>another key</value>
+                    </key>
+                    <value>another value</value>
+                </entry>
+
+                <entry key="a key mapped to a reference" value-ref="anotherObject"/>
+                <entry key="another key mapped to a reference">
+                    <ref bean="anotherObject"/>
+                </entry>
+
+                <entry key-ref="anotherObject" value="a value keyed by a reference"/>
+                <entry>
+                    <key>
+                        <ref bean="anotherObject"/>
+                    </key>
+                    <value>another value keyed by a reference</value>
+                </entry>
+            </map>
+        </property>
+
+        <property name="someProperties">
+            <props>
+                <prop key="administrator">administrator@example.org</prop>
+                <prop key="support">support@example.org</prop>
+                <prop key="development">development@example.org</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="anotherObject" class="adv.springfxintro.p06_collections.AnotherObject"/>
+
+</beans>

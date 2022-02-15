@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="adv.springfxintro.p04_innerbeans.a_property.Foo">
+        <property name="delegate">
+            <bean class="adv.springfxintro.p04_innerbeans.Bar">
+                <property name="message" value="hello world"/>
+            </bean>
+        </property>
+    </bean>
+
+    <!--
+
+    Solo i "top-level" beans vengono registrati nel contesto.
+    Quindi il bean di tipo Foo sarà prelevabile, ma non quello di tipo Bar.
+
+    -->
+
+</beans>

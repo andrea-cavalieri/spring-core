@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="adv.springfxintro.p03_propertyvalues.EmailSender">
+        <property name="server" value="smtpserver.mycompany.it"/>
+	<!-- <property name="port" value="25"/> -->
+        <property name="port" value="venticinque"/>
+        <property name="deliveryNotification" value="true"/>
+    </bean>
+    
+    <bean class="adv.springfxintro.p02_dependencyinjection.a_property.Foo">
+    <property name="bar" ref=""></property>
+    </bean>
+
+    <!--
+
+    La property "server" è di tipo String.
+    La property "port" è di tipo int.
+    La property "deliveryNotification" è di tipo boolean.
+    Tutte le property sono però state inizializzate con string literals.
+    Spring convertirà automaticamente questi valori stringa nei tipi opportuni.
+
+    TODO Cosa succede specificando un valore non numerico per "port"?
+
+    -->
+
+</beans>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="adv.springfxintro.p04_innerbeans.b_constructor.Foo">
+        <constructor-arg>
+            <bean class="adv.springfxintro.p04_innerbeans.Bar">
+                <property name="message" value="hello world"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+
+</beans>
